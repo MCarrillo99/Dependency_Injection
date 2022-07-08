@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@AllArgsConstructor
+@NoArgsConstructor
 public class MyController {
 
     @Autowired
@@ -18,13 +20,6 @@ public class MyController {
     public String getName(){
         System.out.println("myService.getName has been called");
         return myService.getName();
-    }
-
-    public MyController(MyService myService) {
-        this.myService = myService;
-    }
-
-    public MyController() {
     }
 
     @GetMapping("/")
